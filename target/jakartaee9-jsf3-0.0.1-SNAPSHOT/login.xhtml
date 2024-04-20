@@ -8,13 +8,13 @@
 </head>
 <body>
 <h:form>
-    <h:inputHidden id="viewId" value="#{loginBean.pageId}" />
+
     <h:outputLabel for="usernameInput" value="Username:" />
-    <h:inputText id="usernameInput" value="#{loginBean.username}" required="true" />
+    <h:inputText id="usernameInput" value="#{loginBean.usernameInput}" required="true" />
     <h:message for="usernameInput" />
     <br />
     <h:outputLabel for="passwordInput" value="Password:" />
-    <h:inputSecret id="passwordInput" value="#{loginBean.password}" required="true" />
+    <h:inputSecret id="passwordInput" value="#{loginBean.passwordInput}" required="true" />
     <h:message for="passwordInput" />
     <br />
     <h:commandButton value="Submit" action="#{loginBean.login}" />

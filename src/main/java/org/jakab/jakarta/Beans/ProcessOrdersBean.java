@@ -10,6 +10,8 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import org.jakab.jakarta.domain.Order;
 import org.jakab.jakarta.service.OrderService;
+import org.jakab.jakarta.service.SessionHandlerFactory;
+import org.jakab.jakarta.service.SessionHandlerService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,6 +53,7 @@ public class ProcessOrdersBean {
 
     @PostConstruct
     public void init(){
+        SessionHandlerService handler = SessionHandlerFactory.getHandler();
         orders = service.getAllOrders();
         statuses = new ArrayList<>();
         statuses.add("order accepted");
@@ -58,6 +61,8 @@ public class ProcessOrdersBean {
         statuses.add("being prepared");
         statuses.add("ready for collection");
         selectedOrders = new HashMap<>();
+
+        handler.amendOrder(order);
 
     }
 

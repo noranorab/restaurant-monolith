@@ -8,14 +8,30 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>failure</from-outcome>
-            <to-view-id>/failed-login.xhtml</to-view-id>
-            <!-- Optional: You can specify whether to redirect -->
-            <redirect/>
-        </navigation-case>
-        <navigation-case>
+            <from-action>#{loginBean.login}</from-action>
             <from-outcome>success</from-outcome>
             <to-view-id>/result.xhtml</to-view-id>
+            <!-- Optional: You can specify whether to redirect -->
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{loginBean.login}</from-action>
+            <from-outcome>error</from-outcome>
+            <to-view-id>/403.xhtml</to-view-id>
+        </navigation-case>
+
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/admin/processorders.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{loginBean.login}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/processorders.xhtml</to-view-id>
+            <!-- Optional: You can specify whether to redirect -->
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{loginBean.login}</from-action>
+            <from-outcome>error</from-outcome>
+            <to-view-id>/403.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <!-- Put any faces config here. -->

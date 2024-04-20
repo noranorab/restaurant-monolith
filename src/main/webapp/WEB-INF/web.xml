@@ -42,6 +42,7 @@
         </web-resource-collection>
         <auth-constraint>
             <role-name>user</role-name>
+            <role-name>admin</role-name>
         </auth-constraint>
     </security-constraint>
 
@@ -56,6 +57,10 @@
             <role-name>admin</role-name>
         </auth-constraint>
     </security-constraint>
+
+    <session-config>
+        <session-timeout>1</session-timeout> <!-- Timeout in minutes -->
+    </session-config>
 
     <login-config>
         <auth-method>FORM</auth-method>
