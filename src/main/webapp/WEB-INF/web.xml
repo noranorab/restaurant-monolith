@@ -22,7 +22,7 @@
     </welcome-file-list>
 
     <session-config>
-        <session-timeout>120</session-timeout>
+        <session-timeout>2</session-timeout>
     </session-config>
 
     <!-- Security roles used by this web application -->
@@ -58,9 +58,7 @@
         </auth-constraint>
     </security-constraint>
 
-    <session-config>
-        <session-timeout>1</session-timeout> <!-- Timeout in minutes -->
-    </session-config>
+
 
     <login-config>
         <auth-method>FORM</auth-method>

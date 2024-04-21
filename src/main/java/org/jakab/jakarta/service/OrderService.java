@@ -65,7 +65,7 @@ public class OrderService {
         }
     }
 
-    public void placeOrder(Map<Integer,String> items){
+    public Order placeOrder(Map<Integer,String> items){
         MenuDao menuDao = MenuDaoFactory.getMenuDao();
         int maxId = menuDao.getFullMenu().size();
         Order order = menuDao.newOrder("nora");
@@ -86,7 +86,7 @@ public class OrderService {
 
             }
 
-
+        return order;
 
     }
 }

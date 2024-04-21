@@ -1,17 +1,11 @@
 package org.jakab.jakarta.Beans;
 
 import jakarta.annotation.PostConstruct;
-import jakarta.annotation.security.DeclareRoles;
-import jakarta.annotation.security.RolesAllowed;
-import jakarta.ejb.Stateless;
 import jakarta.enterprise.context.RequestScoped;
-import jakarta.faces.context.FacesContext;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import org.jakab.jakarta.domain.Order;
 import org.jakab.jakarta.service.OrderService;
-import org.jakab.jakarta.service.SessionHandlerFactory;
-import org.jakab.jakarta.service.SessionHandlerService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -53,7 +47,7 @@ public class ProcessOrdersBean {
 
     @PostConstruct
     public void init(){
-        SessionHandlerService handler = SessionHandlerFactory.getHandler();
+
         orders = service.getAllOrders();
         statuses = new ArrayList<>();
         statuses.add("order accepted");
@@ -62,7 +56,7 @@ public class ProcessOrdersBean {
         statuses.add("ready for collection");
         selectedOrders = new HashMap<>();
 
-        handler.amendOrder(order);
+
 
     }
 

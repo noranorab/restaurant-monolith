@@ -14,7 +14,9 @@
 	background-color: #FFE8D3;
 	color: #0868B2;">
 <ui:include src="/header.xhtml"/>
-<h2 style="color: #B29882;">Menu</h2>
+<h2>Welcome, #{loginBean.username}</h2>
+<h3 style="color: #B29882;">Menu</h3>
+
 
 <ul>
     <c:forEach items="#{order.items}" var="menuItem">

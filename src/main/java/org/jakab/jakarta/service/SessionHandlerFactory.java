@@ -1,6 +1,7 @@
 package org.jakab.jakarta.service;
 
 public class SessionHandlerFactory {
+
     private static SessionHandlerService handler;
 
     public static SessionHandlerService getHandler() {
